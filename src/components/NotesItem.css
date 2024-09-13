@@ -1,0 +1,274 @@
+.notes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d8f7ff; /* Light purple background */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #1e88e5;
+  }
+  
+  .note-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  .note-text-date {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .note-text {
+    color: #512da8; /* Darker purple text */
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .due-date {
+    color: #757575; /* Gray for due date */
+    font-size: 14px;
+  }
+  
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .icon {
+    cursor: pointer;
+    font-size: 20px;
+    color: #1e88e5; /* Blue for icons */
+  }
+  
+  .beautiful-button {
+    padding: 5px 10px;
+    background-color: #26a69a; /* Teal color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .mark-button {
+    margin-left: 10px;
+  }
+  
+  .notes:hover .note-content {
+    display: none; /* Hide the note content on hover */
+    transition-delay: 4s;
+  }
+  
+  .notes:hover .icons {
+    display: flex; /* Show the icons on hover */
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition-delay: 1s;
+  }
+  
+  .note-content {
+    display: block;
+    flex-direction: column;
+    gap: 5px;
+    transition: display 0.5s; /* Add transition effect */
+  }
+  
+  .icons {
+    display: none; /* Hide the icons by default */
+    gap: 10px;
+  }
+  
+  .icon {
+    cursor: pointer;
+    font-size: 16px; /* Reduce the size of the icons */
+  }
+  
+  /*css for leave button*/
+  .beautiful-buttonl {
+    position: relative;
+    background-color: #ffa07a;
+    border: none;
+    color: #ffffff;
+    padding: 2px 4px; /* reduced padding */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; /* reduced font size */
+    /* margin: 0.5px 0.5px; reduced margin */
+    cursor: pointer;
+    border-radius: 5px; /* reduced border radius */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.2); /* reduced box shadow */
+  }
+  
+  .beautiful-buttonl::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffa07a;
+    border-radius: 3px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    z-index: -1;
+  }
+  
+  .beautiful-buttonl:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .beautiful-buttonl::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8px; /* reduced font size */
+    font-weight: bolder;
+    color: #ffffff;
+    text-shadow: 0px 0px 2px #ffa07a; /* reduced text shadow */
+    transition: text-shadow 0.3s ease;
+  }
+  
+  .beautiful-buttonl:hover::after {
+    text-shadow: 0px 0px 5px #ffa07a, 0px 0px 7px #ffa07a;
+  }
+  
+  .beautiful-buttonl:hover {
+    background-color: #ff9900;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+    animation: pulse 1.5s infinite, spin 3s infinite;
+  }
+  
+  .beautiful-buttonl:active {
+    background-color: #ff9900;
+    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.4);
+    animation: none;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .beautiful-buttonl:hover::before {
+    animation: wave 1.5s infinite;
+  }
+  
+  @keyframes wave {
+    0% {
+      transform: scaleX(1) translateX(0);
+    }
+    50% {
+      transform: scaleX(1.05) translateX(2px);
+    }
+    100% {
+      transform: scaleX(1) translateX(0);
+    }
+  }
+  /* Add media queries for phone screens */
+  
+  @media only screen and (max-width: 480px) {
+    /* Adjust the notes styles */
+    .notes {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .note-content {
+      font-size: 14px;
+    }
+    
+    .icons {
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .icon {
+      font-size: 16px;
+    }
+    
+    /* Adjust the leave button styles */
+    .beautiful-buttonl {
+      padding: 1px 2px;
+      font-size: 10px;
+    }
+    
+    .beautiful-buttonl::before {
+      border-radius: 3px;
+    }
+    
+    .beautiful-buttonl::after {
+      font-size: 10px;
+    }
+    
+    .beautiful-buttonl:hover::after {
+      text-shadow: 0px 0px 1px #ffa07a, 0px 0px 2px #ffa07a;
+    }
+    
+    .beautiful-buttonl:hover {
+      background-color: #ff9900;
+      box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.3);
+    }
+    
+    .beautiful-buttonl:active {
+      background-color: #ff9900;
+      box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.4);
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(0.9);
+      }
+      50% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0.9);
+      }
+    }
+    
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    @keyframes wave {
+      0% {
+        transform: scaleX(0.9) translateX(0);
+      }
+      50% {
+        transform: scaleX(1) translateX(1px);
+      }
+      100% {
+        transform: scaleX(0.9) translateX(0);
+      }
+    }
+  }
